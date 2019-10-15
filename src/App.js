@@ -6,9 +6,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"> 
-        <p>
+        <span>
           First Management system.
-        </p> 
+        </span> 
       </header>
     </div>
   );

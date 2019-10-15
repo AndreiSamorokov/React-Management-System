@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header"> 
         <p>
-          First Management System..
+          First Management System.
         </p> 
       </header>
     </div>

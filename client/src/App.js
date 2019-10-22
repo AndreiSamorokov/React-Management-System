@@ -9,8 +9,8 @@ import TableCell from "@material-ui/core/TableCell";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { withStyles } from "@material-ui/core/styles";
-
 import './App.css';
+
 const style = theme => ({
   root: {
     with: '100%',
@@ -53,6 +53,7 @@ class App extends Component{
     const {completed} = this.state;
     this.setState({ completed: completed >= 100 ? 0 : completed + 1});
   }
+
   render(){
     const { classes } = this.props;
     return(
@@ -74,7 +75,7 @@ class App extends Component{
           }) : 
           
           <TableRow >
-            <TableCell colspan="6" align="center">
+            <TableCell colSpan="6" align="center">
               <CircularProgress className={classes.progress} value={this.state.completed} variant="determinate" />
             </TableCell>
           </TableRow>

@@ -21,6 +21,16 @@ class CustomerAdd extends Component{
             .then((response) =>{
                 console.log(response.data);
             })
+        this.setState({
+            file: null,
+            userName: '',
+            birthday: '',
+            gender: '',
+            job: '',
+            fileName: '',
+        })
+
+        window.location.reload();
     }
 
     handleFileChange = (e) => {
@@ -35,14 +45,16 @@ class CustomerAdd extends Component{
         nextChange[e.target.name] = e.target.value;
         this.setState(nextChange);
     }
+
+
     addCustomer = () => {
         const url = '/api/customers';
         const formData = new FormData();
         formData.append('image', this.state.file);
         formData.append('name', this.state.userName);
-        formData.append('birthday', this.state.userName);
-        formData.append('gender', this.state.userName);
-        formData.append('job', this.state.userName);
+        formData.append('birthday', this.state.birthday);
+        formData.append('gender', this.state.gender);
+        formData.append('job', this.state.job);
         const config = {
             header: {
                 'content-type' : 'multipart/form-data'
